@@ -176,7 +176,9 @@ console.log(novoIme, cena);
 const studenti = [
   { ime: 'Bojan', prosek: 6.2, grad: 'Skopje' },
   { ime: 'Vesna', prosek: 9.7, grad: 'Skopje' },
-  { ime: 'Atanas', prosek: 10, grad: 'Skopje' },
+  { ime: 'Artina', prosek: 9.7, grad: 'Skopje' },
+  { ime: 'Elena', prosek: 9.7, grad: 'Skopje' },
+  { ime: 'Atanas', prosek: 9.1, grad: 'Skopje' },
   { ime: 'Elena', prosek: 6.2, grad: 'Bitola' },
   { ime: 'Muhamed', prosek: 10, grad: 'Kumanovo' },
   { ime: 'Dzejlan', prosek: 9.2, grad: 'Kumanovo' },
@@ -190,6 +192,12 @@ const studenti = [
   { ime: 'Aleksandar', prosek: 7, grad: 'Veles' },
 ];
 //? 1. Site studenti od Skopje chie ime zavrshuva na a i imaat prosek nad 7 pordedeni po ime(rasyechki)
+const stundetiSkopje = studenti
+  .filter((s) => s.grad === 'Skopje' && s.prosek > 7 && s.ime.endsWith('a'))
+  .sort((a, b) => a.ime - b.ime);
+
+console.log(stundetiSkopje);
+
 //? 2. Site studenti koi imaat prosek nad 9 i ne se od Skopje, podredeni po prosek opagjachki
 //? 3. Prvite 3 studenti koi imaat iminja od 5 karakteri, podredeni po prosek
 //? 4. Vkupen prosek na studenti koi se od Kumanovo
