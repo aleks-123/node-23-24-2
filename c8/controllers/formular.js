@@ -18,3 +18,10 @@ exports.getStudenti = async (req, res) => {
   const data = await studentiModel.list();
   res.render('studenti', { data });
 };
+
+exports.getBrishi = async (req, res) => {
+  //! SO req.params IMAME PRISTAP KON SITE DINAMICKI RUTI
+  console.log(+req.params.broj);
+  await studentiModel.remove(+req.params.broj);
+  res.redirect('/studenti');
+};

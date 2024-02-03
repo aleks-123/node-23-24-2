@@ -20,7 +20,9 @@
         <td><%= student.ime %></td>
         <td><%= student.prezime %></td>
         <td><%= student.prosek %></td>
-        <td><a href="/brishi/<%= i %>">Brishi</a></td>
+        <td>
+          <a href="/brishi/<%= i %>">Brishi <%= student.ime %></a>
+        </td>
       </tr>
       <% }); %>
     </table>

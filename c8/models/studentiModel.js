@@ -36,3 +36,10 @@ exports.add = async (data) => {
   fileData.push(data);
   await writeFile(JSON.stringify(fileData));
 };
+
+exports.remove = async (redenBroj) => {
+  const file = await readFile();
+  const fileData = JSON.parse(file);
+  const newFileData = fileData.filter((_, index) => index !== redenBroj);
+  await writeFile(JSON.stringify(newFileData));
+};

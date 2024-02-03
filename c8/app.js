@@ -8,11 +8,12 @@ const app = express();
 
 app.use(express.urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
+app.use(express.static('public'));
 
 app.get('/form', formular.getForm); // kje se prikaze formularot
 app.post('/form', formular.postForm); //kje imame funkcionalost za submitiranje - i kje imame redirekt na ruta /studenti
 app.get('/studenti', formular.getStudenti);
-// app.get('/brishi/:i');
+app.get('/brishi/:broj', formular.getBrishi);
 
 app.listen(10000, (err) => {
   if (err) return console.log(err);
@@ -24,3 +25,11 @@ app.listen(10000, (err) => {
 //Za submitiranje na post korisnice da pishat sopstveno ime naslov i tekst
 //da ima ruta so /sport
 //da ima ruta so /movies
+
+///////////////////////
+
+//?
+//10 ruti da se kreiraat
+//10 razlicni jsoni za sekoj handler baska
+//site da imaat i post i get metodi
+//da imate view soodvetno za sekoj handler ili kontoler
